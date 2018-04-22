@@ -10,6 +10,7 @@ using namespace std;
 
 void InCartoon(cartoon &c, ifstream &ifst);
 void InFeature(feature &f, ifstream &ifst);
+void InDocumental(documental &d, ifstream &ifst);
 
 film* In(ifstream &ifst) {
 	film *f = new film;
@@ -26,6 +27,10 @@ film* In(ifstream &ifst) {
 	case 2:
 		f->k = film::key::CARTOON;
 		InCartoon(f->c, ifst);
+		return f;
+	case 3:
+		f->k = film::key::DOCUMENTAL;
+		InDocumental(f->d, ifst);
 		return f;
 	default:
 		return 0;

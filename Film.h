@@ -6,11 +6,12 @@
 #include <iostream>
 #include "Feature.h"
 #include "Cartoon.h"
+#include "Documental.h"
 
 using namespace std;
 
 struct film {
-	enum key { FEATURE, CARTOON };
+	enum key { FEATURE, CARTOON, DOCUMENTAL };
 	key k; // ключ
 		   // используемые альтернативы
 	char name[256];
@@ -18,6 +19,7 @@ struct film {
 	{
 		feature f;
 		cartoon c;
+		documental d;
 	};
 };
 #endif

@@ -7,6 +7,7 @@ using namespace std;
 
 void OutFeature(feature &f, ofstream &ofst);
 void OutCartoon(cartoon &c, ofstream &ofst);
+void OutDocumental(documental &d, ofstream &ofst);
 
 void Out(film *f, ofstream &ofst) {
 	ofst << f->name << endl;
@@ -16,6 +17,9 @@ void Out(film *f, ofstream &ofst) {
 		break;
 	case film::key::CARTOON:
 		OutCartoon(f->c, ofst);
+		break;
+	case film::key::DOCUMENTAL:
+		OutDocumental(f->d, ofst);
 		break;
 	default:
 		ofst << "Incorrect film!" << endl;
