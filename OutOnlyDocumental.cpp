@@ -6,11 +6,11 @@
 
 using namespace std;
 
-void Out(film *f, ofstream &ofst);
+void Out(film *f, ostream &ofst);
 
 void CheckOutputFile(ostream &ofst);
 
-void OutOnlyDocumental(container c, ofstream &ofst)
+void OutOnlyDocumental(container c, ostream &ofst)
 {
 	CheckOutputFile(ofst);
 	ofst << "Container contains " << c.kol << " elements." << endl;

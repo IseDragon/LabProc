@@ -3,8 +3,6 @@
 #include <stdlib.h>
 #include <fstream>
 #include <iostream>
-#include "gtest/gtest.h"
-#include "Test.h"
 #include "Protect.h"
 
 using namespace std;
@@ -12,11 +10,9 @@ using namespace std;
 void Init(container &c);
 void Clear(container &c);
 void In(container &c, ifstream & ifst);
-void Out(container c, ofstream &ofst);
-void OutOnlyFeature(container c, ofstream &ofst);
-void OutOnlyCartoon(container c, ofstream &ofst);
-void Sort(container &c);
-void MultiMethod(container c, ofstream &ofst);
+void OutCont(container &c, ostream &ofst);
+void Sort(container &c, int d);
+void MultiMethod(container c, ostream &ofst);
 
 int main(int argc, char* argv[]) 
 {
@@ -35,12 +31,62 @@ int main(int argc, char* argv[])
 	Init(c);
 
 	In(c, ifst);
-	ofst << "Filled container. " << endl;
-	MultiMethod(c, ofst);
+	int k1 = 10;
+	int menu = 10;
+	while (menu != 0) {
 
-	Clear(c);
-	ofst << "Empty container. " << endl;
-	
+		cout << "Input number:" << endl;
+		cout << "1 - Sort container" << endl;
+		cout << "2 - Out container" << endl;
+		cout << "3 - Multimethod" << endl;
+		cout << "4 - Clear container" << endl;
+		cout << "0 - exit" << endl;
+		cin >> menu;
+		if (cout.fail())
+		{
+			cout << "Wrong input!" << endl;
+			exit(1);
+		}
+		if (menu < 0 || menu > 4) {
+			cout << "Incorrect choice! Try again!" << endl;
+			continue;
+		}
+		else {
+			switch (menu)
+			{
+			case 1:
+				cout << "Input number:" << endl;
+				cout << "0 - from small to big" << endl;
+				cout << "1 - from big to small" << endl;
+				while (k1 != 0 && k1 != 1)
+				{
+					cin >> k1;
+					if (cout.fail())
+					{
+						cout << "Wrong input!" << endl;
+						exit(1);
+					}
+					if (k1 != 0 && k1 != 1)
+					{
+						cout << "Incorrect choice! Try again!" << endl;
+						continue;
+					}
+				}
+				Sort(c, k1);
+			case 2:
+				OutCont(c, ofst);
+				break;
+			case 3:
+				MultiMethod(c, ofst);
+				break;
+			case 4:
+				Clear(c);
+				break;
+			default:
+				break;
+			}
+		}
+	}
 	cout << "Stop" << endl;
 	return 0;
 	//::testing::InitGoogleTest(&argc, argv);

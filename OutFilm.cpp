@@ -5,13 +5,13 @@
 
 using namespace std;
 
-void OutFeature(feature &f, ofstream &ofst);
-void OutCartoon(cartoon &c, ofstream &ofst);
-void OutDocumental(documental &d, ofstream &ofst);
+void OutFeature(feature &f, ostream &ofst);
+void OutCartoon(cartoon &c, ostream &ofst);
+void OutDocumental(documental &d, ostream &ofst);
 
 void CheckOutputFile(ostream &ofst);
 
-void Out(film *f, ofstream &ofst) 
+void Out(film *f, ostream &ofst) 
 {
 	CheckOutputFile(ofst);
 	ofst << f->name << endl;

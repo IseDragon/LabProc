@@ -6,11 +6,11 @@
 
 using namespace std;
 
-void Out(film *f, ofstream &ofst);
+void Out(film *f, ostream &ofst);
 
 void CheckOutputFile(ostream &ofst);
 
-void MultiMethod(container c, ofstream &ofst)
+void MultiMethod(container c, ostream &ofst)
 {
 	CheckOutputFile(ofst);
 	int k = 0;

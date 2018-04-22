@@ -8,7 +8,7 @@ using namespace std;
 
 void CheckOutputFile(ostream &ofst);
 
-void OutDocumental(documental &d, ofstream &ofst) 
+void OutDocumental(documental &d, ostream &ofst) 
 {
 	CheckOutputFile(ofst);
 	ofst << "It is Documental film." << endl;

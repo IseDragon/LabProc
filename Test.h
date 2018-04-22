@@ -8,7 +8,7 @@
 using namespace std;
 
 void InCartoon(cartoon &c, ifstream &ifst);
-void OutCartoon(cartoon &c, ofstream &ofst);
+void OutCartoon(cartoon &c, ostream &ofst);
 
 class CartoonTest : public ::testing::Test {
 };
@@ -25,7 +25,7 @@ TEST_F(CartoonTest, CheckInput)
 
 TEST_F(CartoonTest, CheckOutput) 
 {
-	ofstream ofst("OutTest.txt");
+	ostream ofst("OutTest.txt");
 	cartoon c;
 	c.t = cartoon::type::PAINTED;
 	OutCartoon(c, ofst);
@@ -41,7 +41,7 @@ TEST_F(CartoonTest, CheckOutput)
 //##################################################################################################
 
 void InDocumental(documental &d, ifstream &ifst);
-void OutDocumental(documental &d, ofstream &ofst);
+void OutDocumental(documental &d, ostream &ofst);
 
 class DocumentalTest : public ::testing::Test {
 };
@@ -58,7 +58,7 @@ TEST_F(DocumentalTest, CheckInput)
 
 TEST_F(DocumentalTest, CheckOutput) 
 {
-	ofstream ofst("OutTest.txt");
+	ostream ofst("OutTest.txt");
 	documental d;
 	d.year = 1;
 	OutDocumental(d, ofst);
@@ -74,7 +74,7 @@ TEST_F(DocumentalTest, CheckOutput)
 //##########################################################################################################
 
 void InFeature(feature &f, ifstream &ifst);
-void OutFeature(feature &f, ofstream &ofst);
+void OutFeature(feature &f, ostream &ofst);
 
 class FeatureTest : public ::testing::Test {
 };
@@ -91,7 +91,7 @@ TEST_F(FeatureTest, CheckInput)
 
 TEST_F(FeatureTest, CheckOutput) 
 {
-	ofstream ofst("OutTest.txt");
+	ostream ofst("OutTest.txt");
 	feature f;
 	strcpy_s(f.director, "Tarantino");
 	OutFeature(f, ofst);
@@ -107,7 +107,7 @@ TEST_F(FeatureTest, CheckOutput)
 //##########################################################################################################
 
 film* In(ifstream &ifst);
-void Out(film *f, ofstream &ofst);
+void Out(film *f, ostream &ofst);
 bool Compare(film *f1, film *f2);
 int FuncFilm(film *f);
 int SumElementsOfString(film* f, int n);
@@ -173,7 +173,7 @@ TEST_F(FilmTest, CheckInputFeature) {
 
 TEST_F(FilmTest, CheckOutputCartoon) 
 {
-	ofstream ofst("OutTest.txt");
+	ostream ofst("OutTest.txt");
 
 	film *f = new film;
 	f->k = film::key::CARTOON;
@@ -192,7 +192,7 @@ TEST_F(FilmTest, CheckOutputCartoon)
 
 TEST_F(FilmTest, CheckOutputDocumental) 
 {
-	ofstream ofst("OutTest.txt");
+	ostream ofst("OutTest.txt");
 
 	film *f = new film;
 	f->k = film::key::DOCUMENTAL;
@@ -211,7 +211,7 @@ TEST_F(FilmTest, CheckOutputDocumental)
 
 TEST_F(FilmTest, CheckOutputFeature) 
 {
-	ofstream ofst("OutTest.txt");
+	ostream ofst("OutTest.txt");
 
 	film *f = new film;
 	f->k = film::key::FEATURE;
@@ -273,11 +273,11 @@ TEST_F(FilmTest, CheckZeroSumElem)
 void Init(container &c);
 void Clear(container &c);
 void In(container &c, ifstream & ifst);
-void Out(container c, ofstream &ofst);
+void Out(container c, ostream &ofst);
 void Sort(container &c);
-void OutOnlyCartoon(container c, ofstream &ofst);
-void OutOnlyDocumental(container c, ofstream &ofst);
-void OutOnlyFeature(container c, ofstream &ofst);
+void OutOnlyCartoon(container c, ostream &ofst);
+void OutOnlyDocumental(container c, ostream &ofst);
+void OutOnlyFeature(container c, ostream &ofst);
 
 class ContainerTest : public ::testing::Test {
 };
@@ -341,7 +341,7 @@ TEST_F(ContainerTest, CheckClearContainer)
 
 TEST_F(ContainerTest, CheckOutCartoon) 
 {
-	ofstream ofst("OutTest.txt");
+	ostream ofst("OutTest.txt");
 
 	container c;
 	Init(c);
@@ -428,7 +428,7 @@ TEST_F(ContainerTest, CheckOutCartoon)
 
 TEST_F(ContainerTest, CheckOutDocumental) 
 {
-	ofstream ofst("OutTest.txt");
+	ostream ofst("OutTest.txt");
 
 	container c;
 	Init(c);
@@ -515,7 +515,7 @@ TEST_F(ContainerTest, CheckOutDocumental)
 
 TEST_F(ContainerTest, CheckOutFeature) 
 {
-	ofstream ofst("OutTest.txt");
+	ostream ofst("OutTest.txt");
 
 	container c;
 	Init(c);
@@ -602,7 +602,7 @@ TEST_F(ContainerTest, CheckOutFeature)
 
 TEST_F(ContainerTest, CheckSort) 
 {
-	ofstream ofst("OutTest.txt");
+	ostream ofst("OutTest.txt");
 
 	container c;
 	Init(c);
@@ -690,7 +690,7 @@ TEST_F(ContainerTest, CheckSort)
 
 TEST_F(ContainerTest, CheckOut) 
 {
-	ofstream ofst("OutTest.txt");
+	ostream ofst("OutTest.txt");
 
 	container c;
 	Init(c);
