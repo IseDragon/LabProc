@@ -18,6 +18,7 @@ film* In(ifstream &ifst) {
 	char t[256];
 	ifst.getline(t, 256);
 	ifst.getline(f->name, 256);
+	ifst.getline(f->country, 256);
 	switch (k1) {
 	case 1:
 		f->k = film::key::FEATURE;
