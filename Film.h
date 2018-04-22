@@ -15,6 +15,7 @@ struct film {
 	key k; // ключ
 		   // используемые альтернативы
 	char name[256];
+	char country[256];
 	union
 	{
 		feature f;

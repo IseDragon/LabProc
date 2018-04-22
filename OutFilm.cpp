@@ -11,6 +11,7 @@ void OutDocumental(documental &d, ofstream &ofst);
 
 void Out(film *f, ofstream &ofst) {
 	ofst << f->name << endl;
+	ofst << "It was filmed in " << f->country << endl;
 	switch (f->k) {
 	case film::key::FEATURE:
 		OutFeature(f->f, ofst);
