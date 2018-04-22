@@ -5,6 +5,7 @@
 #include <iostream>
 #include "gtest/gtest.h"
 #include "Test.h"
+#include "Protect.h"
 
 using namespace std;
 
@@ -18,7 +19,7 @@ void Sort(container &c);
 
 int main(int argc, char* argv[]) {
 
-	/*if (argc != 3) {
+	if (argc != 3) {
 		cout << "incorrect command line! Waited: command in_file out_file" << endl;
 		exit(1);
 	}
@@ -39,7 +40,7 @@ int main(int argc, char* argv[]) {
 	ofst << "Empty container. " << endl;
 	
 	cout << "Stop" << endl;
-	return 0;*/
-	::testing::InitGoogleTest(&argc, argv);
-	return RUN_ALL_TESTS();
+	return 0;
+	//::testing::InitGoogleTest(&argc, argv);
+	//return RUN_ALL_TESTS();
 }

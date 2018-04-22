@@ -9,7 +9,10 @@ void OutFeature(feature &f, ofstream &ofst);
 void OutCartoon(cartoon &c, ofstream &ofst);
 void OutDocumental(documental &d, ofstream &ofst);
 
+void CheckOutputFile(ostream &ofst);
+
 void Out(film *f, ofstream &ofst) {
+	CheckOutputFile(ofst);
 	ofst << f->name << endl;
 	ofst << "It was filmed in " << f->country << endl;
 	switch (f->k) {
@@ -23,6 +26,7 @@ void Out(film *f, ofstream &ofst) {
 		OutDocumental(f->d, ofst);
 		break;
 	default:
-		ofst << "Incorrect film!" << endl;
+		ofst << "Incorrect type of film!" << endl;
+		exit(1);
 	}
 }

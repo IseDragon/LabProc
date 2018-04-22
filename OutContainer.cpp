@@ -9,12 +9,14 @@ using namespace std;
 void Out(film *f, ofstream &ofst);
 int FuncFilm(film *f);
 
+void CheckOutputFile(ostream &ofst);
+
 void Out(container c, ofstream &ofst)
 {
+	CheckOutputFile(ofst);
 	ofst << "Container contains " << c.kol << " elements." << endl;
 	for (int i = 0; i<c.n; i++)
 		{
-			//cout << "\n" << i << "\n";
 			if (c.mas[i] != NULL)
 			{
 				node* vn = c.mas[i];

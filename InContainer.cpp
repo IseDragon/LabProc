@@ -9,9 +9,18 @@ using namespace std;
 film* In(ifstream &ifst);
 int SumElementsOfString(film* f, int n);
 
+void CheckInputFile(ifstream &ifst);
+void CheckWrongInput(ifstream &ifst);
+
 void In(container &c, ifstream & ifst)
 {
+	CheckInputFile(ifst);
 	ifst >> c.kol;
+	CheckWrongInput(ifst);
+	if (c.kol < 0) {
+		cerr << "Wrong number of films" << endl;
+		exit(1);
+	}
 	for (int i = 0; i<c.kol; i++)
 	{
 		film* f;

@@ -8,8 +8,11 @@ using namespace std;
 
 void Out(film *f, ofstream &ofst);
 
+void CheckOutputFile(ostream &ofst);
+
 void OutOnlyCartoon(container c, ofstream &ofst)
 {
+	CheckOutputFile(ofst);
 	ofst << "Container contains " << c.kol << " elements." << endl;
 	for (int i = 0; i<c.n; i++)
 	{

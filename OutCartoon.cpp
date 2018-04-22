@@ -6,7 +6,10 @@
 
 using namespace std;
 
+void CheckOutputFile(ostream &ofst);
+
 void OutCartoon(cartoon &c, ofstream &ofst) {
+	CheckOutputFile(ofst);
 	ofst << "It is cartoon." << endl;
 	ofst << "It is ";
 	switch (c.t) {
@@ -19,5 +22,8 @@ void OutCartoon(cartoon &c, ofstream &ofst) {
 	case cartoon::type::PLASTICINE:
 		ofst << "plasticine." << endl;
 		break;
+	default:
+		cerr << "Unknown type of Cartoon" << endl;
+		exit(1);
 	}
 }
