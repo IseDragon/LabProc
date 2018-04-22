@@ -7,6 +7,7 @@
 using namespace std;
 
 void Out(film *f, ofstream &ofst);
+int FuncFilm(film *f);
 
 void Out(container c, ofstream &ofst)
 {
@@ -20,6 +21,7 @@ void Out(container c, ofstream &ofst)
 				while (c.mas[i])
 				{
 					Out(c.mas[i]->f, ofst);
+					ofst << "Number of vowels = " << FuncFilm(c.mas[i]->f) << endl;
 					c.mas[i] = c.mas[i]->next;
 				}
 			}
