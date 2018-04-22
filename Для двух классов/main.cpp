@@ -3,9 +3,6 @@
 #include <stdlib.h>
 #include <fstream>
 #include <iostream>
-#include "gtest/gtest.h"
-#include "Test.h"
-#include "Protect.h"
 
 using namespace std;
 
@@ -13,15 +10,11 @@ void Init(container &c);
 void Clear(container &c);
 void In(container &c, ifstream & ifst);
 void Out(container c, ofstream &ofst);
-void OutOnlyFeature(container c, ofstream &ofst);
-void OutOnlyCartoon(container c, ofstream &ofst);
-void Sort(container &c);
 void MultiMethod(container c, ofstream &ofst);
 
-int main(int argc, char* argv[]) 
-{
-	if (argc != 3) 
-	{
+int main(int argc, char* argv[]) {
+
+	if (argc != 3) {
 		cout << "incorrect command line! Waited: command in_file out_file" << endl;
 		exit(1);
 	}
@@ -40,9 +33,8 @@ int main(int argc, char* argv[])
 
 	Clear(c);
 	ofst << "Empty container. " << endl;
-	
+	Out(c, ofst);
+
 	cout << "Stop" << endl;
 	return 0;
-	//::testing::InitGoogleTest(&argc, argv);
-	//return RUN_ALL_TESTS();
 }
