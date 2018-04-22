@@ -31,13 +31,11 @@ int main(int argc, char* argv[]) {
 
 	In(c, ifst);
 	ofst << "Filled container. " << endl;
-	OutOnlyCartoon(c, ofst);
+	Out(c, ofst);
 
 	Clear(c);
 	ofst << "Empty container. " << endl;
-	Sort(c);
-	Out(c, ofst);
-
+	
 	cout << "Stop" << endl;
 	return 0;
 }
