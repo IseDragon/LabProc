@@ -17,9 +17,10 @@ void OutOnlyFeature(container c, ofstream &ofst);
 void OutOnlyCartoon(container c, ofstream &ofst);
 void Sort(container &c);
 
-int main(int argc, char* argv[]) {
-
-	if (argc != 3) {
+int main(int argc, char* argv[]) 
+{
+	if (argc != 3) 
+	{
 		cout << "incorrect command line! Waited: command in_file out_file" << endl;
 		exit(1);
 	}

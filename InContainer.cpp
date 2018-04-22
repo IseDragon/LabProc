@@ -17,7 +17,8 @@ void In(container &c, ifstream & ifst)
 	CheckInputFile(ifst);
 	ifst >> c.kol;
 	CheckWrongInput(ifst);
-	if (c.kol < 0) {
+	if (c.kol < 0) 
+	{
 		cerr << "Wrong number of films" << endl;
 		exit(1);
 	}

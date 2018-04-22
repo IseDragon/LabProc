@@ -10,7 +10,8 @@
 
 using namespace std;
 
-struct film {
+struct film 
+{
 	enum key { FEATURE, CARTOON, DOCUMENTAL };
 	key k; // ключ
 		   // используемые альтернативы

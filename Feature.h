@@ -7,7 +7,8 @@
 
 using namespace std;
 
-struct feature {
+struct feature 
+{
 	char director[256];
 };
 #endif

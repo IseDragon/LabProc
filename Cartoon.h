@@ -7,7 +7,8 @@
 
 using namespace std;
 
-struct cartoon {
+struct cartoon 
+{
 	enum type { PAINTED, PUPPET, PLASTICINE };
 	type t;
 };

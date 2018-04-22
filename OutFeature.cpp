@@ -8,7 +8,8 @@ using namespace std;
 
 void CheckOutputFile(ostream &ofst);
 
-void OutFeature(feature &f, ofstream &ofst) {
+void OutFeature(feature &f, ofstream &ofst) 
+{
 	CheckOutputFile(ofst);
 	ofst << "It is feature film." << endl;
 	ofst << "Its director is = " << f.director << endl;

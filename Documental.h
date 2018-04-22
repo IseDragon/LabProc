@@ -7,7 +7,8 @@
 
 using namespace std;
 
-struct documental {
+struct documental 
+{
 	int year;
 };
 #endif

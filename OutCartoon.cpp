@@ -8,22 +8,24 @@ using namespace std;
 
 void CheckOutputFile(ostream &ofst);
 
-void OutCartoon(cartoon &c, ofstream &ofst) {
+void OutCartoon(cartoon &c, ofstream &ofst) 
+{
 	CheckOutputFile(ofst);
 	ofst << "It is cartoon." << endl;
 	ofst << "It is ";
-	switch (c.t) {
-	case cartoon::type::PAINTED:
-		ofst << "painted." << endl;
-		break;
-	case cartoon::type::PUPPET:
-		ofst << "puppet." << endl;
-		break;
-	case cartoon::type::PLASTICINE:
-		ofst << "plasticine." << endl;
-		break;
-	default:
-		cerr << "Unknown type of Cartoon" << endl;
-		exit(1);
+	switch (c.t) 
+	{
+		case cartoon::type::PAINTED:
+			ofst << "painted." << endl;
+			break;
+		case cartoon::type::PUPPET:
+			ofst << "puppet." << endl;
+			break;
+		case cartoon::type::PLASTICINE:
+			ofst << "plasticine." << endl;
+			break;
+		default:
+			cerr << "Unknown type of Cartoon" << endl;
+			exit(1);
 	}
 }
